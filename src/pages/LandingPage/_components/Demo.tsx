@@ -1,10 +1,9 @@
 import React from "react";
-import Image from "next/image";
 
 const Demo = () => {
   return (
-    <div className="w-full flex justify-center items-center p-10 ">
-      <Image
+    <div className="w-full flex justify-center items-center p-10">
+      <img
         src="/VideoPlayer.png"
         alt="Video Player"
         width={900}

@@ -1,6 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+interface AnimatedTextProps {
+  text: string;
+  className?: string; // className is optional
+  type?: string; // type is optional, but you can add a default value if needed
+}
+
 const quote = {
   initial: {
     opacity: 1,
@@ -28,10 +34,14 @@ const singleWord = {
   },
 };
 
-const AnimatedText = ({ text, className = "", type }) => {
+const AnimatedText: React.FC<AnimatedTextProps> = ({
+  text,
+  className = "",
+  type = "div",
+}) => {
   return (
     <div className={`${className}`}>
-      <motion.type
+      <motion.div
         className={`inline-block`}
         variants={quote}
         initial={"initial"}
@@ -46,7 +56,7 @@ const AnimatedText = ({ text, className = "", type }) => {
             {word}&nbsp;
           </motion.span>
         ))}
-      </motion.type>
+      </motion.div>
     </div>
   );
 };

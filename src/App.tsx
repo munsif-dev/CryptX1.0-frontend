@@ -16,6 +16,7 @@ import ForgetPasswordPage from "./pages/Auth/ForgetPasswordPage";
 import { Toaster } from "@/components/ui/toaster";
 import ResetPasswordPage from "@/pages/Auth/ResetPasswordPage";
 import Layout from "./Layout";
+import LandingPage from "@/pages/LandingPage/LandingPage";
 
 function ProtectedRoute({ children }: { children: JSX.Element }) {
   const { authState, isLording } = useAuth();
@@ -70,6 +71,7 @@ export default function App() {
             !authState ? <ResetPasswordPage /> : <Navigate to="/" replace />
           }
         />
+        <Route path="/landing-page" element={<LandingPage />} />
         {/* Error Page */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

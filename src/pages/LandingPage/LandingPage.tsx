@@ -8,15 +8,16 @@ import Footer from "./_components/Footer";
 
 const page = () => {
   return (
-    <>
+    <div className="bg-green-50">
       <Header />
-      <Hero />
-      <Features />
+      {/* <Hero />
+      
       <InputAndLink />
       <Pricing />
-      <Demo />
+      <Demo /> */}
+      <Features />
       <Footer />
-    </>
+    </div>
   );
 };
 

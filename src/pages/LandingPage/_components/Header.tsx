@@ -1,26 +1,26 @@
-import exp from "constants";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-router-dom"; // Use react-router-dom for routing
 
-const Header = () => {
+type HeaderProps = object;
+
+const Header: React.FC<HeaderProps> = () => {
   return (
-    <header className="bg-white">
+    <header className="bg-purple-100">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
             <Link
-              className=" text-teal-600 flex  items-center justify-center"
-              href="#"
+              to="#"
+              className="text-teal-600 flex items-center justify-center"
             >
-              <Image
-                src="/Logo.png"
+              <img
+                src="/"
                 alt="Logo"
                 width={56} // corresponds to "w-14" in Tailwind (14 * 4 = 56)
                 height={56} // corresponds to "h-14" in Tailwind (14 * 4 = 56)
               />
-              <div className="w-auto  text-[#894799] text-lg font-extrabold font-['Montserrat']">
-                AutoGradePro
+              <div className="w-auto text-[#894799] text-lg font-extrabold font-['Montserrat']">
+                Project Name
               </div>
             </Link>
           </div>
@@ -30,8 +30,8 @@ const Header = () => {
               <ul className="flex items-center gap-6 text-sm">
                 <li>
                   <Link
+                    to="/dashboard"
                     className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/dashboard"
                   >
                     Get Started
                   </Link>
@@ -39,8 +39,8 @@ const Header = () => {
 
                 <li>
                   <Link
+                    to="#"
                     className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
                   >
                     Services
                   </Link>
@@ -48,8 +48,8 @@ const Header = () => {
 
                 <li>
                   <Link
+                    to="#"
                     className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
                   >
                     Projects
                   </Link>
@@ -57,8 +57,8 @@ const Header = () => {
 
                 <li>
                   <Link
+                    to="#"
                     className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
                   >
                     Blog
                   </Link>
@@ -70,16 +70,16 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
               <Link
-                className="rounded-full bg-light-2 px-5 py-2.5 text-sm font-medium text-white shadow"
-                href="/sign-in"
+                to="/sign-in"
+                className="rounded-full bg-red-300 px-5 py-2.5 text-sm font-medium text-white shadow"
               >
                 Login
               </Link>
 
               <div className="hidden sm:flex">
                 <Link
-                  className="rounded-full bg-gray-100 px-5 py-2.5 text-sm font-medium text-light-2"
-                  href="/sign-up"
+                  to="/sign-up"
+                  className="rounded-full bg-pink-300 px-5 py-2.5 text-sm font-medium text-light-2"
                 >
                   Register
                 </Link>
@@ -94,11 +94,11 @@ const Header = () => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
